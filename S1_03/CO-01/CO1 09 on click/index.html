@@ -1,0 +1,45 @@
+<html>
+<body>
+<center>
+    <button onclick="changeColor()">Change</button>
+</center>
+    <script>
+        var ColorIndex = 0;
+        var colors = [ "green", "blue", "red", "white"];
+       
+        function changeColor() {
+            document.body.style.backgroundColor = colors[ColorIndex];
+            ColorIndex = (ColorIndex+1) % colors.length;
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- <html>
+<head>
+    <title>Colors</title>
+</head>
+
+<body style="background-color: #000000;">
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        var currentColorIndex = 0;
+
+        function changeColor() {
+            var color = '#' + padZeros(currentColorIndex.toString(16), 6);
+            document.body.style.backgroundColor = color;
+            currentColorIndex = (currentColorIndex + 1) % 16777216;
+        }
+
+        function padZeros(str, length) {
+            while (str.length < length) {
+                str = '0' + str;
+            }
+            return str;
+        }
+    </script>
+</body>
+</html> -->
+

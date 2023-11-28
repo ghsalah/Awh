@@ -1,0 +1,122 @@
+
+<html>
+    <head>
+        <title>User Registration</title>
+            <style>
+                .box {
+                    width: 70%;
+                    margin: 50px auto;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    text-align: center;
+                    display:block;
+                }
+                #logform{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                .queform{
+                    align-items: left;
+                }
+                input{
+                    padding:5px 10px;
+                    margin: 10px;
+                    text-align: center;
+                }
+                .section{
+                    display:none ;
+                    text-align: left;
+                }
+            </style>
+        </head>
+<body>
+
+
+    <div class="box" id="header">
+        <h1>Candidate Login</h1>
+        <form name="logform" id="logform">
+            <label>Reg:no</label>
+            <input type="number" name="regno" placeholder="Enter the registrater no">
+
+            <label>Password</label>
+            <input type="password" name="pass" placeholder="Enter the password">
+
+        </form>
+        <button onclick="examVal()">SUBMIT</button>
+    </div>
+    
+    <div class="box section" id="section">
+        <h1>Questions </h1>
+        <form name="queform" id="queform">
+        <label>1. Which animal is known as the 'Ship of the Desert"?</label>
+        <br>
+        <input type="radio" name="1" id="">Camel
+        <input type="radio" name="1" id="">Dog
+        <input type="radio" name="1" id="">Cow
+        <input type="radio" name="1" id="">cat
+       <br>
+        <label>2. How many days are there in a week?</label>
+        <br>
+        <input type="radio" name="2" id="">5 days
+        <input type="radio" name="2" id="">6 days
+        <input type="radio" name="2" id="">7 days
+        <input type="radio" name="2" id="">8 days
+       <br>
+        <label>3. How many hours are there in a day?</label>
+        <br>
+        <input type="radio" name="3" id="">12 hours
+        <input type="radio" name="3" id="">14 hours
+        <input type="radio" name="3" id="">22 hours
+        <input type="radio" name="3" id="">24 hours
+       <br>
+        <label>4.How many letters are there in the English alphabet?</label>
+        <br>
+        <input type="radio" name="4" id=""> 20 letters
+        <input type="radio" name="4" id=""> 26 letters
+        <input type="radio" name="4" id=""> 30 letters
+        <input type="radio" name="4" id=""> 36 letters
+       <br>
+        <label>5. Rainbow consist of how many colours?</label>
+        <br>
+        <input type="radio" name="5" id="">7 colours
+        <input type="radio" name="5" id="">8 colours
+        <input type="radio" name="5" id="">9 colours
+        <input type="radio" name="5" id="">10 colours
+       <br>
+        </form>
+        <button onclick="login()">SUBMIT</button>
+    </div>
+
+<script>
+       
+        function examVal() {
+            var regno = document.logform.regno.value;
+     var pass = document.logform.pass.value;
+     console.log(regno);
+     console.log(pass);
+            
+
+     
+            document.getElementById('header').style.display="none"
+            document.getElementById('section').style.display = 'block';
+
+        }
+
+        
+        function login() {
+            var regno = document.logform.regno.value;
+     var pass = document.logform.pass.value;
+     console.log(regno);
+     console.log(pass);
+            alert("registrater  "+regno+" Congratulation You are successfully finished Your Exam")
+            document.getElementById('header').style.display="block"
+            document.getElementById('section').style.display = 'none';
+
+        }
+    </script>
+</body>
+</html>
