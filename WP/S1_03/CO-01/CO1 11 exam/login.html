@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>User Registration</title>
+        <style>
+            #nav{
+                display: flex;
+                justify-content: space-between
+            }
+            .box {
+                width: 70%;
+                margin: 50px auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                text-align: center;
+                display:block;
+            }
+            #logform{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            #queform{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            input,button{
+                padding:5px 10px;
+                margin: 10px;
+                text-align: center;
+            }
+            .section{
+                display:none ;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="box header" id="header">
+            <h1>Candidate Login</h1>
+            <form name="logform" id="logform">
+                <label>Reg:no</label>
+                <input type="text" name="regno" placeholder="Enter the registrater no">
+                <label>Password</label>
+                <input type="password" name="pass" placeholder="Enter the password">
+            </form>
+            <button onclick="examVal()">SUBMIT</button>
+        </div>
+        <div class="box section" id="section">
+            <div id="nav"> <span>score:50</span> <span>time:<span id="timer"> 30:00</span></span> </div>
+            <h1>Questions </h1>
+
+
+
+            <form name="queform" id="queform">
+                1. Which animal is known as the 'Ship of the Desert"?
+                <label><input type="radio" name="1" id="">Camel</label>
+                <label><input type="radio" name="1" id="">Dog</label>
+                <label><input type="radio" name="1" id="">Cow</label>
+                <label><input type="radio" name="1" id="">cat</label>
+                2. How many days are there in a week?
+                <label><input type="radio" name="2" id="">5 days</label>
+                <label><input type="radio" name="2" id="">6 days</label>
+                <label><input type="radio" name="2" id="">7 days</label>
+                <label><input type="radio" name="2" id="">8 days</label>
+                3. How many hours are there in a day?
+                <label><input type="radio" name="3" id="">12 hours</label>
+                <label><input type="radio" name="3" id="">14 hours</label>
+                <label><input type="radio" name="3" id="">22 hours</label>
+                <label><input type="radio" name="3" id="">24 hours</label>
+                4.How many letters are there in the English alphabet?
+                <label><input type="radio" name="4" id=""> 20 letters</label>
+                <label><input type="radio" name="4" id=""> 26 letters</label>
+                <label><input type="radio" name="4" id=""> 30 letters</label>
+                <label><input type="radio" name="4" id=""> 36 letters</label>
+                5. Rainbow consist of how many colours?
+                <label><input type="radio" name="5" id="">7 colours</label>
+                <label><input type="radio" name="5" id="">8 colours</label>
+                <label><input type="radio" name="5" id="">9 colours</label>
+                <label><input type="radio" name="5" id="">10 colours</label>
+            </form>
+            <button onclick="login()">SUBMIT</button>
+        </div>
+
+    <script>
+        function examVal() {
+            var regno = document.logform.regno.value;
+            var pass = document.logform.pass.value;
+            console.log(regno);
+            console.log(pass);
+            if (regno == "" || regno == null || pass == "" || pass == null ) {
+                alert("Either register number or password is empty");
+                return false;
+            }
+
+            if (regno.indexOf("AWH") == -1) {
+                alert("Invalid register number");
+                return false;
+            }
+            if (pass.length <= 7) {
+                alert("The password is shorter than 8 characters");
+                return false;
+            }
+            document.getElementById('header').style.display="none"
+            document.getElementById('section').style.display = 'block';
+            return true
+        }
+      
+        var durationInSeconds = 30 * 60;
+
+        var timerDisplay = document.getElementById('timer');
+        
+        function updateTimer() {
+            var minutes = Math.floor(durationInSeconds / 60);
+            var seconds = durationInSeconds % 60;
+            
+            // Add leading zeros to minutes and seconds
+            var formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            timerDisplay.textContent = formattedTime;
+            
+            if (durationInSeconds > 0) {
+                durationInSeconds--;
+                setTimeout(updateTimer, 1000); // Update every second
+            } else {
+                timerDisplay.textContent = "Time's up!";
+            }
+        }
+        // Start the timer
+        updateTimer();
+        
+        
+        
+       
+        function login() {
+             var regno = document.logform.regno.value;
+            var pass = document.logform.pass.value;
+            alert("registrater  "+regno+" Congratulation You are successfully finished Your Exam")
+            document.getElementById('header').style.display="block"
+            document.getElementById('section').style.display = 'none';
+        }
+        
+    </script>
+    </body>
+</html>
