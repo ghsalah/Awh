@@ -3,16 +3,11 @@
         body{
            padding: 20px;
            margin: 20px;
-           color: #f7ba31;
-           background-color: black;
-           font-family: Arial, Helvetica, sans-serif;
            text-align: center;
         }
         form{
-            color: #fff;
-            background-color: #162f68;;
+            border: 2px solid;
             padding:10px ;
-            border: 1px solid #f7ba31;
             width: 60%;
             margin: auto;
             display: flex;
@@ -21,37 +16,32 @@
             font-size: 20px;
         }
         input{
-            
             padding: 5px;
             margin: 10px;
             width: 70%;
             text-align: center;
-            background-color: #162f68;
-            border: 1px solid #f7ba31;
-            
-            
+            border: 1px solid black;
         }
         input[type=submit]{
             width: 40%;
             border-radius: 20px;
-            background-color: #f7ba31;
-            color: white;
+            background-color: black;
+           color: white;
         }
         input[type=submit]:hover{
-            background-color: #162f68;
-            border:1px solid #f7ba31;
-            color: #f7ba31;
+            background-color: white;
+           color: black;
         }
        
     </style>
     <body>
         <h1>LOGIN</h1>
-        <form name="form1" onsubmit="valfunction()">
+        <form name="form1" onsubmit="return valfunction()">
             <label>Name</label>
             <input type="text" id="name" name="name" placeholder="Enter User name"> 
             
             <label>Email</label>
-            <input type="email" name="email" placeholder="Enter User Email"> 
+            <input type="text" name="email" placeholder="Enter User Email"> 
             
             <label>Password</label>
             <input type="password" name="password" placeholder="Enter User password"> 
@@ -62,29 +52,46 @@
             <input type="submit" name="submit" value="SUBMIT" > 
          </form>   
         </body>
-        <script>
-         function valfunction(){
+  
+              <script>
+                function valfunction() {
+                    var name = document.form1.name.value;
+                    var email = document.form1.email.value;
+                    var pass = document.form1.password.value;
+                    var phone = document.form1.phone.value;
+                    var letters = /^[A-Za-z\s]+$/;
             
-            var name=document.form1.name.value;
-            var email=document.form1.email.value;
-            var pass=document.form1.password.value;
-            var phone=document.form1.phone.value;
+                    if (name == "" || name == null) {
+                        alert("The name field is empty");
+                        return false;
+                    }
             
-            if (name==""||name==null) {
-                alert("The name feld is empty") 
-            }
-            if (pass.length<=7) {
-                alert("The password is shorter than 8 characters") 
-            }
-            if (phone.length<=9) {
-                alert("The number is shorter than 10 characters") 
-            }
-            else if (phone.length>=10) {
-                alert("The number is biger than 10 characters") 
-            }
-             
-         }
-        </script>    
-             
-
+                    if (name.match(letters)) {
+                    } else {
+                        alert("Only letters (both uppercase or lowercase) allowed in the name field");
+                        return false;
+                    }
+            
+                    if (email == "" || email == null) {
+                        alert("The email field is empty");
+                        return false;
+                    }
+            
+                    if (email.indexOf("@") == -1) {
+                        alert("Email is missing '@'");
+                        return false;
+                    }
+            
+                    if (pass.length <= 7) {
+                        alert("The password is shorter than 8 characters");
+                        return false;
+                    }
+            
+                    if (phone.length < 10 || phone.length > 10) {
+                        alert("Phone number should be 10 characters");
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
 </html>
