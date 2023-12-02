@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar Generator</title>
+  <style>
+    
+    #calendar{
+     text-align: center;
+    }
+    #year,button{
+      margin: auto;
+      padding: 10px;
+      text-align: center;
+    }
+    #display{
+      display: flex;
+      flex-wrap: wrap;
+    justify-content: space-evenly;
+    }
+    pre{
+      margin: 10px;
+      padding: 10px;
+    font-size: 15px;
+    box-shadow: 4px 5px 8px 0px #a7a7a7;
+    }
+  </style>
+</head>
+<body>
+  <form name="calendar" id="calendar" onsubmit="calendarOf(); return false;">
+    <input type="number" id="year" name="year" placeholder="Enter the year">
+    <button type="submit">Generate</button>
+  </form>
+  
+  <div id="display"></div>
+
+  <script>
+    function calendarOf() {
+      const year = document.calendar.year.value;
+
+      document.getElementById('display').innerHTML = generateCalendar(year);
+    }
+
+    function generateCalendar(year) {
+      let calendarHTML = '';
+
+      for (let month = 1; month <= 12; month++) {
+        const monthDate = new Date(year, month - 1, 1);
+        calendarHTML += `<pre>${monthDate.toLocaleString('default', { month: 'long' })} ${year}\n`;
+
+        const firstDay = monthDate.getDay();
+
+        calendarHTML += "<b>Sun Mon Tue Wed Thu Fri Sat</b>\n";
+
+        for (let i = 0; i < firstDay; i++) {
+          calendarHTML += "    ";
+        }
+
+        let currentDate = new Date(year, month - 1, 1);
+        while (currentDate.getMonth() === month - 1) {
+          const day = currentDate.getDate();
+          calendarHTML += `${day < 10 ? ' ' : ''}${day}  `;
+          if (currentDate.getDay() === 6) {
+            calendarHTML += "\n";
+          }
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        calendarHTML += "</pre>";
+      }
+
+      return calendarHTML;
+    }
+  </script>
+</body>
+</html>
