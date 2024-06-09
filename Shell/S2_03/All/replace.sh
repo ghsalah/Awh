@@ -1,0 +1,1 @@
+sed 's/Linux/Python/g' file4.sh
