@@ -1,30 +1,9 @@
-if [ $# -gt 1 ]
-then
-echo "stntax is <$0> [<filename>]"
-exit 1
-fi
-flag=0
-read -p "enter a file" filename
-if [ $# -eq 1 ]
-then
-term="tty"
-exec < "$1"
-flag=1
-fi
-no1=0
-nowds=0
-while read line
-do
-no1=`expr $no1 + 1`
-set $line>/dev/null
-nowds=`expr $nowds + $#`
-done < $filename
-echo "no of lines=$no1"
-echo "no of words=$nowds"
-if (( $flag == 1 ))
-then
- exec < "$term"
-fi
-
-exit 0
-Comment
+echo "enter the filename"
+read file
+c=`cat $file | wc -c`
+w=`cat $file | wc -w`
+l=`grep -c "." $file`
+echo "number of character in $file is $c"
+echo "number of words in $file is $w"
+echo "number of lines in $file is $l"
+~
