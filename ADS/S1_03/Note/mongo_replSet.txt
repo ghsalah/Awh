@@ -1,0 +1,67 @@
+//normal cmd
+cd "c:\"
+mkdir \data\rs1
+mkdir \data\rs2
+mkdir \data\rs3
+
+//admin cmd
+
+cd "C:\Program Files\MongoDB\Server\5.0\bin"
+
+start mongod -replSet test -logpath \data\rs1\1.log --dbpath \data\rs1 --port 27018
+start mongod -replSet test -logpath \data\rs2\2.log --dbpath \data\rs2 --port 27019
+start mongod -replSet test -logpath \data\rs3\3.log --dbpath \data\rs3 --port 27020
+
+mongo --port 27018
+
+config = {_id:"test",members:[
+{_id:0,host:"localhost:27018"},
+{_id:1,host:"localhost:27019"},
+{_id:2,host:"localhost:27020"}]};
+
+rs.initiate(config)
+rs.status()
+
+use testdb
+db.collection.insertOne({ name: "John Doe", age: 30 });
+db.student.insert({name:"primary"})
+db.student.find();
+show dbs
+use testdb
+
+only in the end  shutdown the server
+
+use admin
+db.shutdownServer();
+
+
+//open new cmd
+
+ --port 27019
+//only use if primary come
+-----------------------------------------
+ db.getMongo().setReadPref('secondary')
+ rs.stepDown()
+------------------------------------------
+ show dbs
+ rs.slaveOk()
+ show dbs
+
+ show collections
+ use testdb
+ show collections
+
+// open new cmd 
+ --port 27020
+------------------------------------------
+ db.getMongo().setReadPref('secondary')
+ rs.stepDown()
+-----------------------------------------
+ rs.slaveOk()
+ show dbs
+use testdb
+show collections
+ db.student.find()
+db.test.insert({name:"secondary"})
+db.student.find();
+
