@@ -1,0 +1,59 @@
+//point to mongo
+----------------
+
+cd "C:\Program Files\MongoDB\Server\5.0\bin"
+
+//start mongo
+--------------
+mongo
+
+//create or use database
+-------------------------
+
+use school;
+
+//show databases
+------------------
+
+show dbs;
+
+//create collections
+--------------------
+
+db.createCollection('student');
+
+//show collections
+------------------
+
+show collections;
+
+insert values
+--------------
+
+db.student.insertOne({id:5},{"name","joy"});
+
+//display values
+--------------
+db.student.find();
+
+//insert many values
+--------------------
+
+db.student.insertMany([{id:2,name:"lio"},{id:3,name:"joy"}]);
+
+//dispaly beautifully
+----------------------
+
+db.student.find().pretty();
+
+//update one value
+-------------------
+
+db.student.updateOne( { id: 2 }, { $set: { id: 1 } } )
+
+//delete one value
+---------------------
+
+db.student.deleteOne({id:5});
+
+
