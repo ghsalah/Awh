@@ -1,0 +1,6 @@
+CREATE OR REPLACE FUNCTION totalcustomers RETURN NUMBER IS
+    total_customers NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO totalcustomers FROM customers;
+    RETURN totalcustomers;
+END;

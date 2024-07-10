@@ -1,0 +1,2 @@
+ALTER TABLE Customers DROP CONSTRAINT chk_age;
+ALTER TABLE Customers ADD CONSTRAINT chk_age CHECK (age >= 18);
