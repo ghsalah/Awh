@@ -1,56 +1,55 @@
 import java.util.Scanner;
-class employees{
-int eno;
-String name;
-int sallary;
-employees(int eno,String name,int sallary){
-this.eno=eno;
-this.name=name;
-this.sallary=sallary;
-}
-void display(){
-System.out.println("employe number: "+eno);
-System.out.println("name: "+name);
-System.out.println("sallary: "+sallary);
+
+class Employee {
+    int eNo;
+    String eName;
+    double eSalary;
+
+    Employee(int eNo, String eName, double eSalary) {
+        this.eNo = eNo;
+        this.eName = eName;
+        this.eSalary = eSalary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee Number: " + eNo + ", Name: " + eName + ", Salary: " + eSalary;
+    }
 }
 
-}
+public class EmployeeMain {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-class Employee{
-public static void main(String[] args){
-Scanner sc=new Scanner(System.in);
-System.out.println("enter the number of employee: ");
-int n=sc.nextInt();
-sc.nextLine();
-employees[] arr=new employees[n];
-for(int i=0;i<n;i++){
-System.out.println("enter the eno: ");
-int eno=sc.nextInt();
-sc.nextLine();
-System.out.println("enter the name: ");
-String name=sc.nextLine();
-System.out.println("enter the Sallary: ");
-int sallary=sc.nextInt();
-sc.nextLine();
-arr[i]=new employees(eno,name,sallary);
-}
-for(int i=0;i<n;i++){
-arr[i].display();
-}
+        System.out.print("Enter the number of employees: ");
+        int n = scanner.nextInt();
+        scanner.nextLine();  // Consume newline
 
-System.out.println("enter the  employee number to search: ");
-int search=sc.nextInt();
-int index=-1;
-for(int i=0;i<n;i++){
-if(arr[i].eno==search){
-index=i;
+        Employee[] employees = new Employee[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter employee number: ");
+            int eNo = scanner.nextInt();
+            scanner.nextLine();  // Consume newline
+
+            System.out.print("Enter employee name: ");
+            String eName = scanner.nextLine();
+
+            System.out.print("Enter employee salary: ");
+            double eSalary = scanner.nextDouble();
+            scanner.nextLine();  // Consume newline
+
+            employees[i] = new Employee(eNo, eName, eSalary);
+        }
+
+        Employee highestSalaryEmployee = employees[0];
+        for (int i = 1; i < employees.length; i++) {
+            if (employees[i].eSalary > highestSalaryEmployee.eSalary) {
+                highestSalaryEmployee = employees[i];
+            }
+        }
+
+        System.out.println("\nEmployee with the highest salary:");
+        System.out.println(highestSalaryEmployee);
+    }
 }
-}
-if(index != -1){
-System.out.println("empno"+search+" fonud at "+index);
-System.out.println("eno: "+arr[index].eno);
-System.out.println("name: "+arr[index].name);
-System.out.println("sallary: "+arr[index].sallary);
-}
-else{
-System.out.println("not found");
