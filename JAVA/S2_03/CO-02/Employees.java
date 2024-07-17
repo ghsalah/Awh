@@ -41,11 +41,7 @@ public class EmployeeMain {
             employees[i] = new Employee(eNo, eName, eSalary);
         }
 
-        // Print all employees
-        System.out.println("\nAll Employees:");
-        for (Employee emp : employees) {
-            emp.showDetails(); // Call showDetails() method to print employee details
-        }
+      
 
         // Finding employee with highest salary
         Employee highestSalaryEmployee = employees[0];
