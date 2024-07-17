@@ -10,10 +10,9 @@ class Employee {
         this.eName = eName;
         this.eSalary = eSalary;
     }
-
-    @Override
-    public String toString() {
-        return "Employee Number: " + eNo + ", Name: " + eName + ", Salary: " + eSalary;
+      
+    public void showDetails() {
+        System.out.println("Employee Number: " + eNo + ", Name: " + eName + ", Salary: " + eSalary);
     }
 }
 
@@ -42,6 +41,13 @@ public class EmployeeMain {
             employees[i] = new Employee(eNo, eName, eSalary);
         }
 
+        // Print all employees
+        System.out.println("\nAll Employees:");
+        for (Employee emp : employees) {
+            emp.showDetails(); // Call showDetails() method to print employee details
+        }
+
+        // Finding employee with highest salary
         Employee highestSalaryEmployee = employees[0];
         for (int i = 1; i < employees.length; i++) {
             if (employees[i].eSalary > highestSalaryEmployee.eSalary) {
@@ -50,6 +56,8 @@ public class EmployeeMain {
         }
 
         System.out.println("\nEmployee with the highest salary:");
-        System.out.println(highestSalaryEmployee);
+        highestSalaryEmployee.showDetails(); // Call showDetails() method for highest salary employee
+
+        scanner.close();
     }
 }
