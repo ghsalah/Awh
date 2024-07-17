@@ -1,0 +1,182 @@
+********************************** SET A*************************************
+
+Write a java program to add and multiply 2 matrices. Use separate methods for add, multiply and display matrices.
+
+
+
+********************************** SET A*************************************
+
+Write a java program to add and multiply 2 matrices. Use separate methods for add, multiply and display matrices.
+
+
+
+********************************** SET A*************************************
+
+Write a java program to add and multiply 2 matrices. Use separate methods for add, multiply and display matrices.
+
+
+
+
+********************************** SET B *************************************
+
+Program to create a class for Employee having attributes eNo, eName and  eSalary. Read n employ information and print the details of the employee having the highest salary, using the concept of Array of Objects.
+
+
+
+********************************** SET B *************************************
+
+Program to create a class for Employee having attributes eNo, eName and  eSalary. Read n employ information and print the details of the employee having the highest salary, using the concept of Array of Objects.
+
+
+********************************** SET B *************************************
+
+Program to create a class for Employee having attributes eNo, eName and  eSalary. Read n employ information and print the details of the employee having the highest salary, using the concept of Array of Objects.
+
+
+
+********************************** SET C *************************************
+
+(a) Write a java program to count the no. of words in a given string.
+(b) Write a java program to compare two strings.
+
+
+********************************** SET C *************************************
+
+(a) Write a java program to count the no. of words in a given string.
+(b) Write a java program to compare two strings.
+
+
+
+********************************** SET C *************************************
+
+(a) Write a java program to count the no. of words in a given string.
+(b) Write a java program to compare two strings.
+
+
+
+
+********************************** SET D*************************************
+Create CPU with attribute price. Create inner class Processor (no. of cores, manufacturer) and static nested class RAM (memory, manufacturer). Create an object of CPU and print information of Processor and RAM.
+
+
+
+********************************** SET D*************************************
+Create CPU with attribute price. Create inner class Processor (no. of cores, manufacturer) and static nested class RAM (memory, manufacturer). Create an object of CPU and print information of Processor and RAM.
+
+
+
+********************************** SET D*************************************
+Create CPU with attribute price. Create inner class Processor (no. of cores, manufacturer) and static nested class RAM (memory, manufacturer). Create an object of CPU and print information of Processor and RAM.
+
+
+
+********************************** SET E*************************************
+Write a Java program that implements a multi-thread application that has three threads. The first thread displays "Good Morning" for every one second, the second thread displays "Hello" for every two seconds and third thread displays "Welcome" for every three seconds.
+
+
+
+********************************** SET E*************************************
+Write a Java program that implements a multi-thread application that has three threads. The first thread displays "Good Morning" for every one second, the second thread displays "Hello" for every two seconds and third thread displays "Welcome" for every three seconds.
+
+
+********************************** SET E*************************************
+Write a Java program that implements a multi-thread application that has three threads. The first thread displays "Good Morning" for every one second, the second thread displays "Hello" for every two seconds and third thread displays "Welcome" for every three seconds.
+
+
+********************************** SET F*************************************
+Create an interface having prototypes of functions area () and perimeter (). Create two classes Circle and Rectangle which implements the above interface. Create a menu driven program to find area and perimeter of objects.
+
+
+
+********************************** SET F*************************************
+Create an interface having prototypes of functions area () and perimeter (). Create two classes Circle and Rectangle which implements the above interface. Create a menu driven program to find area and perimeter of objects.
+
+
+
+********************************** SET F*************************************
+Create an interface having prototypes of functions area () and perimeter (). Create two classes Circle and Rectangle which implements the above interface. Create a menu driven program to find area and perimeter of objects.
+
+
+
+********************************** SET G*************************************
+Design a class to represent a bank account. Which include contains account number, name of the depositor, type of the account, balance amount in the account. Use constructors to assign initial values, to Deposit an amount, to Withdraw amount after checking balance, to display name and balance. (Hint: constructor overloading).
+
+
+********************************** SET G*************************************
+Design a class to represent a bank account. Which include contains account number, name of the depositor, type of the account, balance amount in the account. Use constructors to assign initial values, to Deposit an amount, to Withdraw amount after checking balance, to display name and balance. (Hint: constructor overloading).
+
+********************************** SET G*************************************
+Design a class to represent a bank account. Which include contains account number, name of the depositor, type of the account, balance amount in the account. Use constructors to assign initial values, to Deposit an amount, to Withdraw amount after checking balance, to display name and balance. (Hint: constructor overloading).
+
+
+
+********************************** SET H*************************************
+To create an abstract class named shape that contains two integers and an empty method named printArea .Provide three classes named Rectangle ,Triangle and Circle subclass that each one of the classes extends the Class Shape .Each one of the classes contains only the method printArea() that prints the area of Shape.
+
+
+
+
+********************************** SET H*************************************
+To create an abstract class named shape that contains two integers and an empty method named printArea .Provide three classes named Rectangle ,Triangle and Circle subclass that each one of the classes extends the Class Shape .Each one of the classes contains only the method printArea() that prints the area of Shape.
+
+
+
+
+********************************** SET H*************************************
+To create an abstract class named shape that contains two integers and an empty method named printArea .Provide three classes named Rectangle ,Triangle and Circle subclass that each one of the classes extends the Class Shape .Each one of the classes contains only the method printArea() that prints the area of Shape.
+
+
+
+
+
+
+
+********************************** SET I*************************************
+Write a user defined exception to print the message “Number is less than 10” if the number entered is less than 10 otherwise prints the square of the number.
+
+
+********************************** SET I*************************************
+Write a user defined exception to print the message “Number is less than 10” if the number entered is less than 10 otherwise prints the square of the number.
+
+
+
+********************************** SET I*************************************
+Write a user defined exception to print the message “Number is less than 10” if the number entered is less than 10 otherwise prints the square of the number.
+
+
+
+
+********************************** SET J*************************************
+Write a user defined exception to print the message “Age is not valid to vote” if the age entered is less than 18 otherwise prints the message” You are eligible to vote”.
+
+
+
+********************************** SET J*************************************
+Write a user defined exception to print the message “Age is not valid to vote” if the age entered is less than 18 otherwise prints the message” You are eligible to vote”.
+
+
+
+
+********************************** SET J*************************************
+Write a user defined exception to print the message “Age is not valid to vote” if the age entered is less than 18 otherwise prints the message” You are eligible to vote”.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+
+
