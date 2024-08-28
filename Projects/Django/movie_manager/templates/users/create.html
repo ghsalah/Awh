@@ -1,0 +1,23 @@
+
+<h1>Signup</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+        <label for=""> UserName : <input type="text" name="username"></label>
+    </p>
+    <p>
+        <label for=""> Password : <input type="password" name="password"></label>
+    </p>
+    <button type="submit">Signup</button>
+
+</form>
+<p>
+    {% if user %}
+    Now user created with user name {{ user.username }}
+    {% endif %}
+</p>
+<p style="background-color: red; color: white;">
+    {% if error_massage %}
+     {{ error_massage }} 
+    {% endif %}
+</p>
