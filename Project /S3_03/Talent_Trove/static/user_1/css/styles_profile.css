@@ -1,0 +1,590 @@
+/* General Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-section, .content-section {
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 30px;
+    border: 2px solid #fff;
+    display: none;
+}
+
+.profile-header .imgtext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: #ffb701;
+    font-size: 66px;
+    border-radius: 50%;
+    margin-right: 30px;
+    border: 2px solid #fff;
+
+   
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info h2 {
+    color: #ffb701;
+    margin: 0;
+}
+
+.profile-info .btn {
+    background-color: #ffb701;
+    border-color: #ffb701;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-info .btn:hover {
+    background-color: #e09a00;
+    border-color: #e09a00;
+}
+
+/* Profile Details */
+.profile-details {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-group {
+    margin-bottom: 10px;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: #ffb701;
+}
+
+.profile-data {
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 3px;
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    margin: 20px 0;
+}
+
+
+.nav-link {
+    color: #ffb701;
+    font-size: 24px;
+    padding: 10px; /* Ensure there is enough padding to cover the clickable area */
+    display: flex;
+    align-items: center; /* Center-align icons vertically */
+    justify-content: center; /* Center-align icons horizontally */
+    text-decoration: none; /* Remove underline if present */
+}
+
+.nav-link i {
+    font-size: 24px; /* Adjust icon size if necessary */
+}
+
+
+.nav-link:hover {
+    color: #e09a00;
+}
+
+/* Content Section */
+.content-section {
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.content-section h2 {
+    color: #ffb701;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-info h2 {
+        font-size: 24px;
+    }
+
+    .profile-info .btn {
+        padding: 8px 16px;
+    }
+}
+
+
+
+/* Gallery Grid =======================================================*/
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.gallery-item {
+  
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    display: block;
+    margin: 0 auto;
+    border-bottom: 2px solid #fff;
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.gallery-item p {
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    background-color: #1e1e1e;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+    border: 5px solid #fff;
+    margin: auto;
+    display: block;
+}
+
+.lightbox-close, .lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lightbox-close {
+    right: 20px;
+    top: 20px;
+}
+
+.lightbox-prev {
+    left: 20px;
+    font-family: "Font Awesome 5 Free"; /* Use FontAwesome for icons */
+    font-weight: 900;
+    content: "\f053"; /* chevron-left */
+}
+
+.lightbox-next {
+    right: 20px;
+    font-family: "Font Awesome 5 Free"; /* Use FontAwesome for icons */
+    font-weight: 900;
+    content: "\f054"; /* chevron-right */
+}
+
+/* Hover Effects */
+.lightbox-prev:hover, .lightbox-next:hover {
+    color: #ffb701; /* Change color on hover */
+}
+
+
+
+/* Styles for Job Cards ========================================*/
+.app_job_card{
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+}
+.application-item {
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    padding: 30px;
+    color: white;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.application-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-name {
+    color: #ffb701;
+    text-decoration: none;
+}
+
+.status-icons i {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.approved {
+    color: #28a745; /* Green for approved */
+}
+
+.not-approved {
+    color: #dc3545; /* Red for not approved */
+}
+
+.pending {
+    color: #ffc107; /* Yellow for pending */
+}
+
+.job-title {
+    cursor: pointer;
+    color: #9a9893;
+    margin-top: 10px;
+    font-size: 1.2em;
+   
+}
+
+.job-details {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+    margin: 10px;
+
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e72121;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.delete-btn:hover {
+    color: #a51616;
+}
+
+/* job post ================================*/
+/* Container for job post form */
+#post-a-job {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #ffb701; /* Your preferred highlight color */
+}
+
+/* Input field styling */
+input[type="text"], input[type="number"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #444;
+    color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Styling for placeholder */
+::placeholder {
+    color: #aaa;
+    opacity: 1; /* Show placeholder clearly */
+}
+
+/* Select dropdown styling */
+select {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Button styling */
+button[type="submit"] {
+    background-color: #ffb701;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e09a00;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    #post-a-job {
+        padding: 15px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="text"], input[type="number"], textarea, select {
+        font-size: 12px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+
+/* Job Card */
+.app_job_card {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #2b2b2b;
+    color: white;
+}
+
+/* Application Header */
+.application-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-name {
+    color: #ffb701;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Job Title */
+.job-title {
+    cursor: pointer;
+    color: #9a9893;
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Job Details */
+.job-details {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+    background: #333;
+    border-radius: 8px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-buttons button {
+    background: none;
+    border: 2px solid #ffb701;
+    color: #ffb701;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.action-buttons button:hover {
+    background-color: #ffb701;
+    color: #fff;
+}
+
+.action-buttons .approve-btn {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.action-buttons .approve-btn:hover {
+    background-color: #28a745;
+}
+
+.action-buttons .reject-btn {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.action-buttons .reject-btn:hover {
+    background-color: #dc3545;
+}
+
+.action-buttons .pending-btn {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+.action-buttons .pending-btn:hover {
+    background-color: #ffc107;
+}
+
+
+/* Pending Job Card */
+.pending-job-card {
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* Job Header */
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-name {
+    color: #ffb701;
+    text-decoration: none;
+}
+
+
+
+/* Job Title */
+.job-title {
+    cursor: pointer;
+    color: #9a9893;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* Job Details */
+.job-details {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+/* Action Buttons */
+.action-buttons button {
+    background-color: #2b2b2b;
+    border: 2px solid transparent;
+    color: #ffb701;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-right: 10px; /* Space between buttons */
+}
+
+.action-buttons button:hover {
+    background-color: #ffb701;
+    color: #2b2b2b;
+}
+
+.action-buttons .approve-btn {
+    border-color: #28a745; /* Green border for approved */
+}
+
+.action-buttons .approve-btn:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.action-buttons .reject-btn {
+    border-color: #dc3545; /* Red border for rejected */
+}
+
+.action-buttons .reject-btn:hover {
+    background-color: #dc3545;
+    color: #fff;
+}

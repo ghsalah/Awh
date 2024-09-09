@@ -1,0 +1,150 @@
+.sidebar {
+width: 240px;
+height: 100vh;
+background-color: #000;
+position: fixed;
+top: 0;
+left: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 20px;
+transition: transform 0.3s, background-color 0.3s;
+z-index: 1000; /* Ensure it overlays content */
+}
+.sidebar.hidden {
+transform: translateX(-100%);
+}
+.sidebar.expanded {
+background-color: #1c1c1c; /* Slightly different color for expanded state */
+}
+.sidebar img.logo {
+width: 80px;
+margin-bottom: 10px;
+display: block; /* Display logo by default */
+}
+.sidebar .brand-name {
+font-family: "Sankofa Display", sans-serif;
+font-weight: 500;
+color: #fff;
+background-color: #0a1727;
+width: 100%;
+text-align: center;
+padding: 1rem;
+font-size: 40px;
+margin-bottom: 20px;
+display: block; /* Display brand name by default */
+}
+.nav-item {
+display: flex;
+text-decoration: none;
+align-items: center;
+width: 100%;
+padding: 15px 20px;
+cursor: pointer;
+transition: background 0.3s, color 0.3s;
+}
+.nav-item:hover {
+background-color: #333;
+}
+.nav-item i {
+font-size: 24px;
+margin-right: 10px;
+color: #fff; /* Default color */
+transition: color 0.3s;
+}
+.nav-item span {
+font-size: 16px;
+color: #fff; /* Default color */
+transition: color 0.3s;
+}
+.nav-item.active i,
+.nav-item.active span {
+color: #ffb701; /* Color for active item */
+}
+.sidebar.expanded .nav-item.active i,
+.sidebar.expanded .nav-item.active span {
+color: #ffb701; /* Color for active item in expanded state */
+}
+
+@media (min-width: 1024px) { /* Desktop view */
+    .sidebar {
+        width: 240px;
+    }
+    .sidebar img.logo {
+        display: none; /* Hide logo on larger screens */
+    }
+    .sidebar .brand-name {
+        display: block; /* Show brand name on larger screens */
+    }
+   
+    .toggle-btn {
+        display: none; /* Hide toggle button on desktop */
+    }
+}
+@media (max-width: 1024px) and (min-width: 576px) { /* Tablet view */
+    .sidebar {
+        width: 80px;
+        transform: none; /* Always visible on tablets */
+    }
+    .sidebar img.logo {
+        display: block; /* Show logo on tablets */
+    }
+    .sidebar .brand-name {
+        display: none; /* Hide brand name on tablets */
+    }
+    .nav-item span {
+        display: none; /* Hide text */
+    }
+   
+    .toggle-btn {
+        display: none; /* Hide toggle button on tablets */
+    }
+}
+@media (max-width: 576px) { /* Phone view */
+    .sidebar {
+        width: 80%;
+        transform: translateX(-100%);
+        background-color: rgba(0, 0, 0, 0.9); /* Dark transparent background */
+        position: fixed; /* Fixed position to overlay content */
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+    .sidebar.expanded {
+        transform: translateX(0);
+    }
+    
+    .toggle-btn {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background-color: #ffb701;
+        border: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 2000; /* Ensure it is above other content */
+        cursor: pointer;
+    }
+    .toggle-btn:hover {
+        background-color: #e09a00;
+    }
+    .sidebar img.logo {
+        display: block; /* Show logo on smaller screens */
+    }
+    .sidebar .brand-name {
+        display: block; /* Show brand name on smaller screens */
+    }
+    .sidebar .nav-item {
+        justify-content: flex-start; /* Align items to the start */
+    }
+    .sidebar .nav-item i {
+        font-size: 28px; /* Larger icons for better touch */
+    }
+    .sidebar .nav-item span {
+        display: inline; /* Show text */
+        font-size: 16px; /* Ensure text size is readable */
+    }
+}

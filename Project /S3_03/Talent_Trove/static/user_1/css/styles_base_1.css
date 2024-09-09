@@ -1,0 +1,36 @@
+.main-content {
+    margin-left: 240px;
+    padding: 40px;
+    transition: margin-left 0.3s;
+    padding: 20px;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+    @media (min-width: 1024px) { /* Desktop view */
+        
+        .main-content {
+            margin-left: 240px;
+       
+        }
+    }
+    @media (max-width: 1024px) and (min-width: 576px) { /* Tablet view */
+        
+        .main-content {
+            margin-left: 80px;
+        }
+    }
+    @media (max-width: 576px) { /* Phone view */
+        
+        .main-content {
+            margin-left: 0;
+        }
+        
+        
+    }
+    /* General Styles */
+    

@@ -1,0 +1,38 @@
+
+<head>
+    <title>{% block title %}Profile Page{% endblock %}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'user_1/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'user_1/css/styles_base_1.css' %}">
+
+    
+</head>
+<body>
+
+    <div class="sidebar">
+        {% include 'user_1/sidebar.html' %}
+    </div>
+
+    <div class="main-content">
+        {% block content %}
+        Main content will be injected here
+        {% endblock %}
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="{% static 'user_1/js/script_2.js' %}"></script>
+</body>
+</html>

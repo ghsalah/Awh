@@ -1,0 +1,33 @@
+{% load static %} 
+<link rel="stylesheet" href="{% static 'user_1/css/styles_side_bar.css' %}">
+<img src="{% static 'user_1/images/logo.jpg' %}" alt="Logo" class="logo"> <!-- Add your logo path here -->
+<h2 class="brand-name">Talent Trove</h2> <!-- Brand name text -->
+
+<a href="" class="nav-item" onclick="setActive(this)">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+</a>
+
+<a href="" class="nav-item" onclick="setActive(this)">
+    <i class="fas fa-search"></i>
+    <span>Search</span>
+</a>
+
+
+<a href="" class="nav-item" onclick="setActive(this)">
+    <i class="fas fa-envelope"></i>
+    <span>Messages</span>
+</a>
+
+<a href="" class="nav-item" onclick="setActive(this)">
+    <i class="fas fa-bell"></i>
+    <span>Notifications</span>
+</a>
+
+
+<a href="{% url 'profile' %}" class="nav-item active" onclick="setActive(this)">
+    <i class="fas fa-user"></i>
+    <span>Profile</span>
+</a>
+
+

@@ -1,0 +1,336 @@
+{% extends 'user_1/base_1.html' %}
+{% load static %}
+
+{% block title %}Profile - Talent Trove{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'user_1/css/styles_profile.css' %}">
+
+    <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+
+    <!-- Profile Section -->
+    <div class="container">
+        <!-- Profile Section Container -->
+        <div class="profile-section">
+            <div class="profile-header">
+                <img src="{% static 'user_1/images/profile_1.jpg' %}" alt="B">
+                <span class="imgtext">B</span>
+                <div class="profile-info">
+                    <h2>Bill Gates</h2>
+                    <button class="btn btn-primary">Edit profile</button>
+                </div>
+            </div>
+    
+            <!-- Profile Details Section -->
+            <div class="profile-details">
+                <div class="profile-group">
+                    <span class="profile-label">Email:</span>
+                    <span class="profile-data">bill.gates@microsoft.com</span>
+                </div>
+                <div class="profile-group">
+                    <span class="profile-label">Country:</span>
+                    <span class="profile-data">United States</span>
+                </div>
+                <div class="profile-group">
+                    <span class="profile-label">Company Name:</span>
+                    <span class="profile-data">Microsoft</span>
+                </div>
+                <div class="profile-group">
+                    <span class="profile-label">Industry:</span>
+                    <span class="profile-data">Technology</span>
+                </div>
+                <div class="profile-group">
+                    <span class="profile-label">Hourly Rate:</span>
+                    <span class="profile-data">$500/hour</span>
+                </div>
+                <div class="profile-group">
+                    <span class="profile-label">Experience:</span>
+                    <span class="profile-data">30 years</span>
+                </div>
+                <div class="profile-group">
+                    <span class="profile-label">Skills:</span>
+                    <span class="profile-data">Leadership, Programming, Business Strategy</span>
+                </div>
+                <div class="profile-group">
+                    <span class="profile-label">Languages:</span>
+                    <span class="profile-data">English</span>
+                </div>
+                <div class="profile-group">
+                    <span class="profile-label">About:</span>
+                    <span class="profile-data">Co-founder of Microsoft and philanthropist.</span>
+                </div>
+            </div>
+        </div>
+
+   <!-- Navigation Tabs -->
+<nav class="navbar navbar-expand-lg" style="background-color: #121212;">
+    <div class="container-fluid">
+        <ul class="navbar-nav me-auto mb-2" style="flex-direction: row;">
+            <li class="nav-item active">
+                <a class="nav-link active" id="media-hub-tab"><i class="fas fa-images"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="my-applications-tab"><i class="fas fa-briefcase"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="post-a-job-tab"><i class="fas fa-plus-circle"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="job-applications-tab"><i class="fas fa-bullhorn"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="job-pending-tab"><i class="fa-solid fa-hourglass-half "></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Dynamic Sections -->
+<div class="content-section">
+<!-- Media Hub Section -->
+<div id="media-hub" style="display: block;">
+    <h2>Media Hub</h2>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2020/10/02072937/Freelancer-start-768x384.png" alt="Image 1">
+            <p>Description of Image 1</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Image 2">
+            <p>Description of Image 2</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://wise.com/imaginary-v2/how-to-start-freelance-writing_1194335037.jpg?width=1200" alt="Image 3">
+            <p>Description of Image 3</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Image 4">
+            <p>Description of Image 4</p>
+        </div>
+        <!-- Add more gallery items as needed -->
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-prev">&#xf053;</span>
+        <img class="lightbox-img" src="" alt="Full size image">
+        <span class="lightbox-next">&#xf054;</span>
+    </div>
+</div>
+
+<!-- form -->
+<div id="my-applications" style="display: none;">
+    <h2>Applied Jobs</h2>
+ <div class="app_job_card">
+
+    <div class="application-header">
+        <div>
+            <img src="https://via.placeholder.com/50" alt="Profile Picture" class="profile-pic">
+            <a href="#" class="profile-name">John Doe</a>
+        </div>
+        <div class="status-icons">
+            <i class="fa-solid fa-person-circle-check approved" style="display: inline;"></i>
+            <i class="fa-solid fa-person-circle-xmark not-approved" style="display: none;"></i>
+            <i class="fa-solid fa-hourglass-half pending" style="display: none;"></i>
+        </div>
+    </div>
+    <div class="job-title" onclick="toggleDetails(this)">Software Developer</div>
+    <div class="job-details" style="display: none;">
+        <p><strong>Skills:</strong> JavaScript, React, Node.js</p>
+        <p><strong>Duration:</strong> 6 months</p>
+        <p><strong>Experience:</strong> 3 years</p>
+        <p><strong>Budget:</strong> $5000</p>
+        <p><strong>Description:</strong> Looking for a skilled developer to work on a new project...</p>
+
+        <a href="" class="delete-btn btn "><i class="fas fa-trash"></i> </a>
+    </div>
+ </div>
+    
+ <div class="app_job_card">
+
+    <div class="application-header">
+        <div>
+            <img src="https://via.placeholder.com/50" alt="Profile Picture" class="profile-pic">
+            <a href="#" class="profile-name">John Doe</a>
+        </div>
+        <div class="status-icons">
+            <i class="fa-solid fa-person-circle-check approved" style="display: none;"></i>
+            <i class="fa-solid fa-person-circle-xmark not-approved" style="display: none;"></i>
+            <i class="fa-solid fa-hourglass-half pending" style="display: inline;"></i>
+        </div>
+    </div>
+    <div class="job-title" onclick="toggleDetails(this)">Software Developer</div>
+    <div class="job-details" style="display: none;">
+        <p><strong>Skills:</strong> JavaScript, React, Node.js</p>
+        <p><strong>Duration:</strong> 6 months</p>
+        <p><strong>Experience:</strong> 3 years</p>
+        <p><strong>Budget:</strong> $5000</p>
+        <p><strong>Description:</strong> Looking for a skilled developer to work on a new project...</p>
+        <p><strong>Category ID:</strong> 101</p>
+        <p><strong>Client ID:</strong> 202</p>
+        <a href="" class="delete-btn btn "><i class="fas fa-trash"></i> </a>
+    </div>
+ </div>
+
+ <div class="app_job_card">
+    <div class="application-header">
+        <div>
+            <img src="https://via.placeholder.com/50" alt="Profile Picture" class="profile-pic">
+            <a href="#" class="profile-name">John Doe</a>
+        </div>
+        <div class="status-icons">
+            <i class="fa-solid fa-person-circle-check approved" style="display: none;"></i>
+            <i class="fa-solid fa-person-circle-xmark not-approved" style="display: inline;"></i>
+            <i class="fa-solid fa-hourglass-half pending" style="display: none;"></i>
+        </div>
+    </div>
+    <div class="job-title" onclick="toggleDetails(this)">Software Developer</div>
+    <div class="job-details" style="display: none;">
+        <p><strong>Skills:</strong> JavaScript, React, Node.js</p>
+        <p><strong>Duration:</strong> 6 months</p>
+        <p><strong>Experience:</strong> 3 years</p>
+        <p><strong>Budget:</strong> $5000</p>
+        <p><strong>Description:</strong> Looking for a skilled developer to work on a new project...</p>
+        <a href="" class="delete-btn btn "><i class="fas fa-trash"></i> </a>
+    </div>
+ </div>
+</div>
+
+<div id="post-a-job" style="display: none;">
+    <h2>Post a Job</h2>
+    <form id="job-post-form">
+        <div class="form-group">
+            <label for="job-title"><strong>Job Title:</strong></label>
+            <input type="text" id="job-title" name="job-title" required placeholder="e.g., Software Developer">
+        </div>
+
+        <!-- Dropdown for Skills -->
+        <div class="form-group">
+            <label for="skills"><strong>Skills:</strong></label>
+            <select id="skills" name="skills" required>
+                <option value="" disabled selected>Select required skills</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="React">React</option>
+                <option value="Node.js">Node.js</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="PHP">PHP</option>
+            </select>
+        </div>
+
+        <!-- Dropdown for Duration -->
+        <div class="form-group">
+            <label for="duration"><strong>Duration:</strong></label>
+            <select id="duration" name="duration" required>
+                <option value="" disabled selected>Select duration</option>
+                <option value="1 month">1 month</option>
+                <option value="3 months">3 months</option>
+                <option value="6 months">6 months</option>
+                <option value="1 year">1 year</option>
+            </select>
+        </div>
+
+        <!-- Dropdown for Category -->
+        <div class="form-group">
+            <label for="category"><strong>Category:</strong></label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>Select job category</option>
+                <option value="Design">Design</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Finance">Finance</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="experience"><strong>Experience:</strong></label>
+            <input type="number" id="experience" name="experience" required placeholder="e.g., 3 years">
+        </div>
+
+        <div class="form-group">
+            <label for="budget"><strong>Budget:</strong></label>
+            <input type="number" id="budget" name="budget" required placeholder="e.g., $5000">
+        </div>
+
+        <div class="form-group">
+            <label for="description"><strong>Description:</strong></label>
+            <textarea id="description" name="description" rows="4" required placeholder="Provide a job description..."></textarea>
+        </div>
+
+        <button type="submit">Post Job</button>
+    </form>
+</div>
+
+<div id="job-applications" style="display: none;">
+    <h2>Applications for Your Jobs</h2>
+
+    <div class="app_job_card">
+        <div class="application-header">
+            <div>
+                <img src="https://via.placeholder.com/50" alt="Profile Picture" class="profile-pic">
+                <a href="#" class="profile-name">John Doe</a>
+            </div>
+        </div>
+        <div class="job-title" onclick="toggleDetails(this)">Software Developer</div>
+        <div class="job-details" style="display: none;">
+            <p><strong>Skills:</strong> JavaScript, React, Node.js</p>
+            <p><strong>Duration:</strong> 6 months</p>
+            <p><strong>Experience:</strong> 3 years</p>
+            <p><strong>Budget:</strong> $5000</p>
+            <p><strong>Description:</strong> Looking for a skilled developer to work on a new project...</p>
+            <div class="action-buttons">
+                <button class="approve-btn"><i class="fa-solid fa-check"></i> Approve</button>
+                <button class="reject-btn"><i class="fa-solid fa-xmark"></i> Reject</button>
+                <button class="pending-btn"><i class="fa-solid fa-hourglass-half"></i> Pending</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Repeat .app_job_card for more applications -->
+</div>
+
+<div id="job-pending" style="display: none;">
+    <h2>Pending Jobs</h2>
+    <div class="app_job_card">
+        <div class="application-header">
+            <div>
+                <img src="https://via.placeholder.com/50" alt="Profile Picture" class="profile-pic">
+                <a href="#" class="profile-name">John Doe</a>
+            </div>
+            <div class="status-icons">
+                <!-- Status icons (optional) -->
+            </div>
+        </div>
+        <div class="job-title" onclick="toggleDetails(this)">Software Developer</div>
+        <div class="job-details" style="display: none;">
+            <p><strong>Skills:</strong> JavaScript, React, Node.js</p>
+            <p><strong>Duration:</strong> 6 months</p>
+            <p><strong>Experience:</strong> 3 years</p>
+            <p><strong>Budget:</strong> $5000</p>
+            <p><strong>Description:</strong> Looking for a skilled developer to work on a new project...</p>
+            <div class="action-buttons">
+                <button class="approve-btn"><i class="fa-solid fa-check"></i> Approve</button>
+                <button class="reject-btn"><i class="fa-solid fa-xmark"></i> Reject</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+</body>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    <!-- Link to external JavaScript file -->
+    
+
+    <script>
+      
+   
+    </script>
+{% endblock %}
